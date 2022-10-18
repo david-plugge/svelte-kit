@@ -273,10 +273,24 @@ function kit() {
 					// a linked dependency, and that causes modules to be imported twice
 					// under different IDs, which breaks a bunch of stuff
 					// https://github.com/vitejs/vite/pull/9296
-					external: ['@sveltejs/kit']
+					external: [
+						'@sveltejs/kit',
+						'$app/environment',
+						'$app/forms',
+						'$app/navigation',
+						'$app/paths',
+						'$app/stores'
+					]
 				},
 				optimizeDeps: {
-					exclude: ['@sveltejs/kit']
+					exclude: [
+						'@sveltejs/kit',
+						'$app/environment',
+						'$app/forms',
+						'$app/navigation',
+						'$app/paths',
+						'$app/stores'
+					]
 				}
 			};
 

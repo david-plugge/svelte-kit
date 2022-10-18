@@ -143,10 +143,24 @@ export function get_default_build_config({ config, input, ssr, outDir }) {
 			alias: get_aliases(config.kit)
 		},
 		optimizeDeps: {
-			exclude: ['@sveltejs/kit']
+			exclude: [
+				'@sveltejs/kit',
+				'$app/environment',
+				'$app/forms',
+				'$app/navigation',
+				'$app/paths',
+				'$app/stores'
+			]
 		},
 		ssr: {
-			noExternal: ['@sveltejs/kit']
+			noExternal: [
+				'@sveltejs/kit',
+				'$app/environment',
+				'$app/forms',
+				'$app/navigation',
+				'$app/paths',
+				'$app/stores'
+			]
 		},
 		worker: {
 			rollupOptions: {
